@@ -6,7 +6,7 @@
 //  Copyright © 2020 Razeware. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUI 
 
 class PostViewModel: ObservableObject {
   @Published var posts: [MediaPost] = []
