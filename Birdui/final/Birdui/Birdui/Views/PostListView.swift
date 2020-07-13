@@ -10,11 +10,6 @@ import SwiftUI
 var post = PostViewModel()
 
 struct PostListView: View {
-    static let taskDateFormat: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM, HH:mm"
-        return formatter
-    }()
     
     var body: some View {
         // TODO: This should look exactly like the Birdie table view,

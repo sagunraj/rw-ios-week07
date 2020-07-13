@@ -11,30 +11,11 @@ import SwiftUI
 struct PostView: View {
     
     let post: MediaPost
-    
-    let masscotImageSize: CGFloat = 50
     let postImageSize: CGFloat = 100
     
     var body: some View {
         VStack {
-            VStack(alignment: .leading) {
-                HStack {
-                    Image("mascot_swift-badge")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: self.masscotImageSize,
-                               height: self.masscotImageSize)
-                    VStack(alignment: .leading) {
-                        Text(self.post.userName)
-                        Text("\(self.post.timestamp, formatter: PostListView.taskDateFormat)")
-                    }
-                }
-                HStack {
-                    Text("\(self.post.textBody ?? "")")
-                        .multilineTextAlignment(.leading)
-                    Spacer()
-                }
-            }
+            TextPostView(post: post)
             self.post.uiImage.map {
                 Image(uiImage: $0)
                     .resizable()
@@ -53,3 +34,4 @@ struct PostView_Previews: PreviewProvider {
                                  uiImage: UIImage(named: "octopus")))
     }
 }
+
