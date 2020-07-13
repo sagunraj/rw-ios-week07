@@ -29,4 +29,8 @@ class PostViewModel: ObservableObject {
         posts.filter(\.isLiked)
     }
     
+    func deletePost(at indexSet: IndexSet) {
+        posts.remove(atOffsets: indexSet)
+    }
+    
 }

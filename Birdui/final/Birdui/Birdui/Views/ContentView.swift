@@ -35,7 +35,7 @@ struct ContentView: View {
                 }
             }
             .modifier(HPaddingModifier())
-            PostListView(posts: $post.posts)
+            PostListView(posts: $post.posts, viewModel: post)
         }
         .sheet(isPresented: $isModalShown) {
             if self.activeSheet == .newPost {
