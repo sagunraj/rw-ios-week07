@@ -12,6 +12,13 @@
 		337218BE24BC49E7001D7BAF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218BD24BC49E7001D7BAF /* Date.swift */; };
 		337218C324BC5005001D7BAF /* TextPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218C224BC5005001D7BAF /* TextPostView.swift */; };
 		337218C724BC5A9E001D7BAF /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218C624BC5A9E001D7BAF /* Double.swift */; };
+		337218C924BC6512001D7BAF /* MascotAndPostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218C824BC6512001D7BAF /* MascotAndPostDetailsView.swift */; };
+		337218CB24BC67AD001D7BAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218CA24BC67AD001D7BAF /* ContentView.swift */; };
+		337218CF24BC7EF7001D7BAF /* LikedPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218CE24BC7EF7001D7BAF /* LikedPostsView.swift */; };
+		337218D124BC8943001D7BAF /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218D024BC8943001D7BAF /* Binding.swift */; };
+		337218D324BC895E001D7BAF /* ForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218D224BC895E001D7BAF /* ForEach.swift */; };
+		337218D524BC897D001D7BAF /* IndexedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218D424BC897D001D7BAF /* IndexedCollection.swift */; };
+		337218D724BC8BFB001D7BAF /* LikedPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337218D624BC8BFB001D7BAF /* LikedPostView.swift */; };
 		CD7798B924AF0799004D6A6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7798B824AF0799004D6A6B /* AppDelegate.swift */; };
 		CD7798BB24AF0799004D6A6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7798BA24AF0799004D6A6B /* SceneDelegate.swift */; };
 		CD7798BF24AF079C004D6A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD7798BE24AF079C004D6A6B /* Assets.xcassets */; };
@@ -31,6 +38,13 @@
 		337218BD24BC49E7001D7BAF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		337218C224BC5005001D7BAF /* TextPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPostView.swift; sourceTree = "<group>"; };
 		337218C624BC5A9E001D7BAF /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		337218C824BC6512001D7BAF /* MascotAndPostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MascotAndPostDetailsView.swift; sourceTree = "<group>"; };
+		337218CA24BC67AD001D7BAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		337218CE24BC7EF7001D7BAF /* LikedPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPostsView.swift; sourceTree = "<group>"; };
+		337218D024BC8943001D7BAF /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		337218D224BC895E001D7BAF /* ForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEach.swift; sourceTree = "<group>"; };
+		337218D424BC897D001D7BAF /* IndexedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
+		337218D624BC8BFB001D7BAF /* LikedPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPostView.swift; sourceTree = "<group>"; };
 		CD7798B524AF0799004D6A6B /* Birdui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birdui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7798B824AF0799004D6A6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD7798BA24AF0799004D6A6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +76,9 @@
 			children = (
 				337218BD24BC49E7001D7BAF /* Date.swift */,
 				337218C624BC5A9E001D7BAF /* Double.swift */,
+				337218D024BC8943001D7BAF /* Binding.swift */,
+				337218D224BC895E001D7BAF /* ForEach.swift */,
+				337218D424BC897D001D7BAF /* IndexedCollection.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -78,10 +95,14 @@
 			isa = PBXGroup;
 			children = (
 				CD7798D724B04BEC004D6A6B /* PostListView.swift */,
+				337218C824BC6512001D7BAF /* MascotAndPostDetailsView.swift */,
 				337218B924BC2E7D001D7BAF /* HeaderView.swift */,
 				CD7798D924B04C01004D6A6B /* PostView.swift */,
 				CD7798D524B040C9004D6A6B /* NewPostView.swift */,
 				337218C224BC5005001D7BAF /* TextPostView.swift */,
+				337218CA24BC67AD001D7BAF /* ContentView.swift */,
+				337218D624BC8BFB001D7BAF /* LikedPostView.swift */,
+				337218CE24BC7EF7001D7BAF /* LikedPostsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,12 +225,19 @@
 				337218BC24BC48A8001D7BAF /* HPaddingModifier.swift in Sources */,
 				337218BA24BC2E7D001D7BAF /* HeaderView.swift in Sources */,
 				CD7798D124AF0B23004D6A6B /* MediaPost.swift in Sources */,
+				337218D724BC8BFB001D7BAF /* LikedPostView.swift in Sources */,
+				337218D524BC897D001D7BAF /* IndexedCollection.swift in Sources */,
 				337218C724BC5A9E001D7BAF /* Double.swift in Sources */,
 				CD7798DA24B04C01004D6A6B /* PostView.swift in Sources */,
 				CD7798BB24AF0799004D6A6B /* SceneDelegate.swift in Sources */,
 				CD7798D624B040C9004D6A6B /* NewPostView.swift in Sources */,
+				337218C924BC6512001D7BAF /* MascotAndPostDetailsView.swift in Sources */,
 				337218C324BC5005001D7BAF /* TextPostView.swift in Sources */,
 				CD7798DE24B05896004D6A6B /* ImagePicker.swift in Sources */,
+				337218D124BC8943001D7BAF /* Binding.swift in Sources */,
+				337218D324BC895E001D7BAF /* ForEach.swift in Sources */,
+				337218CB24BC67AD001D7BAF /* ContentView.swift in Sources */,
+				337218CF24BC7EF7001D7BAF /* LikedPostsView.swift in Sources */,
 				337218BE24BC49E7001D7BAF /* Date.swift in Sources */,
 				CD7798DC24B04C1A004D6A6B /* PostViewModel.swift in Sources */,
 				CD7798D824B04BEC004D6A6B /* PostListView.swift in Sources */,

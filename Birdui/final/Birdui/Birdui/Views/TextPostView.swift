@@ -10,20 +10,20 @@ import SwiftUI
 
 struct TextPostView: View {
     
-    let post: MediaPost
-    let mascotImageSize: CGFloat = 50
-    
+    @Binding var post: MediaPost
+        
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("mascot_swift-badge")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: self.mascotImageSize,
-                           height: self.mascotImageSize)
-                VStack(alignment: .leading) {
-                    Text(self.post.userName)
-                    Text("\(self.post.timestamp.getDateString(ofFormat: "d MMM, HH:mm"))")
+                MascotAndPostDetailsView(post: post)
+                Spacer()
+                Button(action: {
+                    self.post.isLiked.toggle()
+                }) {
+                    Image(systemName: post.isLiked ? "heart.fill" : "heart")
+                        .foregroundColor(.red)
+                        .scaleEffect(post.isLiked ? 1.2 : 1)
+                        .animation(Animation.easeInOut)
                 }
             }
             HStack {
@@ -37,8 +37,8 @@ struct TextPostView: View {
 
 struct TextPostView_Previews: PreviewProvider {
     static var previews: some View {
-        TextPostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
-                                     userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
-                                     uiImage: UIImage(named: "octopus")))
+        TextPostView(post: .constant(MediaPost(textBody: "Went to the Aquarium today :]",
+                                               userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
+                                               uiImage: UIImage(named: "octopus"))))
     }
 }

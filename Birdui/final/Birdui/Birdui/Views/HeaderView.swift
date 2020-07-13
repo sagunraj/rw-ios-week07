@@ -12,6 +12,10 @@ struct HeaderView: View {
     
     let mascotImageSize: CGFloat = 50
     
+    @Binding var posts: [MediaPost]
+    @Binding var activeSheet: ActiveSheet
+    @Binding var isModalShown: Bool
+    
     var body: some View {
         HStack {
             Image("mascot_swift-badge")
@@ -22,14 +26,24 @@ struct HeaderView: View {
             Spacer()
             Text("Home")
                 .font(Font.system(.title))
-                .padding(.leading, mascotImageSize.toNegative)
             Spacer()
+            Button(action: {
+                self.activeSheet = .likedList
+                self.isModalShown.toggle()
+            }) {
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+                    .font(Font.title)
+            }
         }
     }
+    
 }
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        HeaderView(posts: .constant([MediaPost(textBody: "Went to the Aquarium today :]",
+                                               userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
+                                               uiImage: UIImage(named: "octopus"))]), activeSheet: .constant(.likedList), isModalShown: .constant(false))
     }
 }

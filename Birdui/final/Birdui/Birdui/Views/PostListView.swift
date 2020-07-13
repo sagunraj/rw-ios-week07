@@ -10,35 +10,21 @@ import SwiftUI
 
 struct PostListView: View {
     
-    var post = PostViewModel()
-    
-    @State var isModalShown = false
+    @Binding var posts: [MediaPost]
     
     var body: some View {
-        // TODO: This should look exactly like the Birdie table view,
-        // but with only one button.
-        VStack(alignment: .leading) {
-            Group {
-                HeaderView()
-                Button("Create New Post") {
-                    self.isModalShown.toggle()
-                }
+        List {
+            ForEach(posts) { index in
+                    PostView(post: self.$posts[index])
             }
-            .modifier(HPaddingModifier())
-            List {
-                ForEach(post.posts.indices) { index in
-                    PostView(post: self.post.posts[index])
-                }
-            }
-        }
-        .sheet(isPresented: $isModalShown) {
-            NewPostView(postHandler: self.post)
         }
     }
 }
 
 struct PostListView_Previews: PreviewProvider {
     static var previews: some View {
-        PostListView()
+        PostListView(posts: .constant([MediaPost(textBody: "Went to the Aquarium today :]",
+                                                 userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
+                                                 uiImage: UIImage(named: "octopus"))]))
     }
 }

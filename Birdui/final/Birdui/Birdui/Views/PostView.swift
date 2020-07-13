@@ -10,12 +10,13 @@ import SwiftUI
 
 struct PostView: View {
     
-    let post: MediaPost
+    @Binding var post: MediaPost
+    
     let postImageSize: CGFloat = 100
     
     var body: some View {
         VStack {
-            TextPostView(post: post)
+            TextPostView(post: $post)
             if post.uiImage != nil {
                 Image(uiImage: post.uiImage!)
                     .resizable()
@@ -29,9 +30,9 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
+        PostView(post: .constant(MediaPost(textBody: "Went to the Aquarium today :]",
                                  userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
-                                 uiImage: UIImage(named: "octopus")))
+                                 uiImage: UIImage(named: "octopus"))))
     }
 }
 

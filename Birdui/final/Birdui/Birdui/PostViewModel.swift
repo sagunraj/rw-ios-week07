@@ -25,4 +25,8 @@ class PostViewModel: ObservableObject {
         posts = posts.sorted(by: { $0.timestamp > $1.timestamp })
     }
     
+    func getLikedPosts() -> [MediaPost] {
+        posts.filter(\.isLiked)
+    }
+    
 }
