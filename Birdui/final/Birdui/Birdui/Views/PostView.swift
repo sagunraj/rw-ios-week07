@@ -16,8 +16,8 @@ struct PostView: View {
     var body: some View {
         VStack {
             TextPostView(post: post)
-            self.post.uiImage.map {
-                Image(uiImage: $0)
+            if post.uiImage != nil {
+                Image(uiImage: post.uiImage!)
                     .resizable()
                     .scaledToFit()
                     .frame(width: self.postImageSize,

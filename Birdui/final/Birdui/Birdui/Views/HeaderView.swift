@@ -22,7 +22,7 @@ struct HeaderView: View {
             Spacer()
             Text("Home")
                 .font(Font.system(.title))
-                .padding(.leading, mascotImageSize * -1)
+                .padding(.leading, mascotImageSize.toNegative)
             Spacer()
         }
     }
