@@ -11,12 +11,20 @@ import SwiftUI
 struct TextPostView: View {
     
     @Binding var post: MediaPost
-        
+    
+    @State var isShareSheetShown = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 MascotAndPostDetailsView(post: post)
                 Spacer()
+                Button(action: {
+                    self.isShareSheetShown.toggle()
+                }) {
+                    Image(systemName: "square.and.arrow.up")
+                }
+                .modifier(ImageButtonModifier())
                 Button(action: {
                     self.post.isLiked.toggle()
                 }) {
@@ -25,12 +33,19 @@ struct TextPostView: View {
                         .scaleEffect(post.isLiked ? 1.2 : 1)
                         .animation(Animation.easeInOut)
                 }
+                .modifier(ImageButtonModifier())
             }
             HStack {
                 Text("\(self.post.textBody ?? "")")
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
+        }
+        .sheet(isPresented: $isShareSheetShown) {
+            ShareSheet(activityItems: [self.post.textBody ?? "",
+                                       self.post.userName,
+                                       self.post.timestamp.getDateString(ofFormat: "d MMM, HH:mm"),
+                                       self.post.uiImage ?? ""])
         }
     }
 }
